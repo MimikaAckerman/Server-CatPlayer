@@ -1,4 +1,4 @@
-import { USERS_DB } from "../../database.js";
+import { USERS_DB } from "../database.js";
 
 const checkEmailPassword = (email,password) => {
   const user = USERS_DB.find((user) => user.email === email);

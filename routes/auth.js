@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { USERS_DB } from "../database.js";
-import checkEmailPassword from "./helpers/checkEmailPassword.js";
+import checkEmailPassword from "../helpers/checkEmailPassword.js";
 
 const authRouter = Router();
 
