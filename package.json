@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon ./index.js"
+    "start": "nodemon ./src/index.js",
+    "dev": "concurrently \"nodemon ./src/index.js\" \"json-server --watch ./src/db/db.json --port 3000\"",
+    "server": "json-server --watch ./src/database/db.json --port 3000"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "helmet": "^6.0.1",
+    "init": "^0.1.2",
     "mongoose": "^6.8.3"
   }
 }
