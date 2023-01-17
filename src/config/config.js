@@ -42,7 +42,8 @@ const CONFIG = {
         },
         db:{
             //localhost -> albums
-            url:''
+            url:'http://localhost:8000/albums'
         }
     }
 }
+module.exports = CONFIG[ENV]

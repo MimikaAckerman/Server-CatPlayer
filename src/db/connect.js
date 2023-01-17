@@ -9,3 +9,4 @@ function connect () {
         useUnifiedTopology:true
     })
 }
+module.exports = connect
