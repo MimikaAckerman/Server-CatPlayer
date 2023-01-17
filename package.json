@@ -1,5 +1,5 @@
 {
-  "name": "ServerAppMusic",
+  "name": "server-app-music",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -30,7 +30,9 @@
     "express": "^4.18.2",
     "helmet": "^6.0.1",
     "init": "^0.1.2",
+    "loglevel": "^1.8.1",
     "mongoose": "^6.8.3",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "node-fetch-commonjs": "^3.2.4"
   }
 }

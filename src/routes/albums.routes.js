@@ -6,3 +6,5 @@ albumRouter
 .get('/:id',AlbumsController.getAlbumByID)
 .delete('/:id',AlbumsController.deleteAlbum)
 .patch(':/id',AlbumsController.createAlbum)
+
+module.exports = albumRouter

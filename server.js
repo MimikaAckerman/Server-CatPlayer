@@ -2,7 +2,8 @@ const express = require('express')
 const helmet = require('helmet')
 const morgan = require('morgan')
 const {json} = require('body-parser')
-const albumsRoutes = require('./routes/albums.routes')
+
+const albumsRoutes = require('./src/routes/albums.routes.js')
 
 const app = express();
 
