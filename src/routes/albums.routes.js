@@ -1,10 +1,10 @@
 const albumRouter = require('express').Router()
-const AlbumsController = require('../controllers/albums.controller')
+const albumsController = require('../controllers/albums.controller.js')
 
 albumRouter
-.get('/',AlbumsController.getAllAlbums)
-.get('/:id',AlbumsController.getAlbumByID)
-.delete('/:id',AlbumsController.deleteAlbum)
-.patch(':/id',AlbumsController.createAlbum)
+.get('/',albumsController.getAllAlbums)
+.get('/:id',albumsController.getAlbumByID)
+.delete('/:id',albumsController.deleteAlbum)
+.patch(':/id',albumsController.createAlbum)
 
 module.exports = albumRouter
