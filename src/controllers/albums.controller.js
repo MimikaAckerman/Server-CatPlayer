@@ -3,6 +3,7 @@ const albumModel = require('../models/albums.model')
 const getAllAlbums = async (req,res,next) =>{
     try {
         const allAlbums = await albumModel.find({})
+        // console.log(allAlbums)
         res.status(200).send({status:true,data:allAlbums})
     } catch (error) {
         res.status(500).send({status:false,msg:error.message})
@@ -18,17 +19,20 @@ const createAlbum = async (req,res,next) => {
             title,
             yearReleased,
             genre
-        })
+          });
+      
+
         if(id){
             await authorModel
             .updateOne(
                 {_id:id},
-                {$push:{albums:newAlbum._id}}
+                {$push:{Albums:newAlbum._id}}
             )
         }
         res.status(201).send({status:true,data:newAlbum._id})
     } catch (error) {
         res.status(500).send({status:false,msg:error.message})
+      
         
     }
 }
@@ -40,7 +44,8 @@ const getAlbumByID= async(req,res,next) =>{
     } catch (error) {
         res.status(500).send({status:false,msg:error.message})
         
-    }
+    }  
+
 }
 const updateAlbum = async(req,res,next) =>{
     const {id} = req.params
@@ -66,7 +71,7 @@ const updateAlbum = async(req,res,next) =>{
 const deleteAlbum = async(req,res,next) =>{
     const {id} = req.params
     try {
-        const album = await albumModel.findByIdAndDelete({_id:id})
+        const album = await AlbumModel.findByIdAndDelete({_id:id})
         res.status(200).send({status:true,data:album._id})
     } catch (error) {
         res.status(500).send({status:false,msg:error.message})
