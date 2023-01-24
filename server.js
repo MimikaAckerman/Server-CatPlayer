@@ -8,6 +8,8 @@ const userRoutes = require('./src/routes/user.routes.js')
 const fileUpload = require('express-fileupload')
 const cors = require('cors')
 
+const playlistsRoutes = require('./src/routes/playlists.routes.js')
+
 const app = express();
 
 const corsOptions ={
@@ -30,5 +32,7 @@ app.use(json({limit:'50mb'}))
 
 app.use('/album' ,albumsRoutes)
 app.use('/user',userRoutes)
+app.use('/playlists',playlistsRoutes)
+
 
 module.exports = app;

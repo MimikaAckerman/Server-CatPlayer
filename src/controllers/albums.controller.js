@@ -2,10 +2,15 @@ const albumModel = require('../models/albums.model')
 
 const getAllAlbums = async (req, res, next) => {
     try {
-      const allAlbums = await albumModel.find({}).lean().exec()
+
+    /*   const allAlbums = await albumModel.find({}).lean().exec()
   
       res.status(200).send({ status: true, data: allAlbums })
-      console.log(allAlbums)
+      console.log(allAlbums) */
+
+        const allAlbums = await albumModel.find({})
+        res.status(200).send({status:true,data:allAlbums})
+
     } catch (error) {
       res.status(500).send({ status: false, msg: error.message })
     }

@@ -43,6 +43,7 @@ const CONFIG = {
         db:{
             //localhost -> albums
            /*  url:'http://localhost:8000/albums' */
+            // url:'http://localhost:8000/albums'
         }
     }
 }
