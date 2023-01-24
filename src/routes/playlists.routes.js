@@ -8,6 +8,11 @@ playlistRouter
 .get('/',PlaylistsController.getAllPlaylists)
 //created a playlist 
 .post('/',PlaylistsController.createPlaylist)
+
+
+
+
+
 //show specif playlist with name
 /* .get('/name/:id',PlaylistsController.getPlaylistByName) */
 
