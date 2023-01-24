@@ -9,10 +9,7 @@ playlistRouter
 //created a playlist 
 .post('/',PlaylistsController.createPlaylist)
 //show specif playlist with name
-.get('/name/:id',PlaylistsController.getPlaylistByName)
-
-
-
+/* .get('/name/:id',PlaylistsController.getPlaylistByName) */
 
 //delete playlist 
 .delete('/:id',PlaylistsController.deletePlaylist)
@@ -25,7 +22,7 @@ playlistRouter
 
 
     //show specific playlist with ID
-.get('/:id',PlaylistsController.getPlaylistByID)
+/* .get('/:id',PlaylistsController.getPlaylistByID) */
   
 
 

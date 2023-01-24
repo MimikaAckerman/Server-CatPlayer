@@ -25,8 +25,8 @@ async function createPlaylist(req, res, next) {
     try {
         const playlist = await playlistModel.create({
             name, 
-        description, 
-        thumbnail
+            description, 
+            thumbnail
         })
         res.status(200).send({status:true,data:playlist})
     } catch (error) {
@@ -38,8 +38,8 @@ async function createPlaylist(req, res, next) {
 
 //SHOW SPECIFIC PLAYLIST WITH NAME
 
-const getPlaylistByName = async (req, res, next) => {
-    const name = req.query.name;
+/* const getPlaylistByName = async (req, res, next) => {
+    const name = req.query.name; */
  
         
    
@@ -50,7 +50,7 @@ const getPlaylistByName = async (req, res, next) => {
   } catch (error) {
     res.status(500).send({ status: false, msg: error.message });
   } */
-};
+
 
 
 
@@ -98,8 +98,8 @@ const deletePlaylist = async (req, res, next) => {
 module.exports = {
   getAllPlaylists,
   createPlaylist,
-  getPlaylistByName,
-  
+/*   getPlaylistByName, */
+
   updatePlaylist,
   deletePlaylist,
 };

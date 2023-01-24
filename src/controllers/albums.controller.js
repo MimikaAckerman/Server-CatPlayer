@@ -16,6 +16,7 @@ const getAllAlbums = async (req, res, next) => {
     }
   }
   
+  
   const createAlbum = async (req, res, next) => {
     const { id } = req.params
     const { title, yearReleased, genre } = req.body
