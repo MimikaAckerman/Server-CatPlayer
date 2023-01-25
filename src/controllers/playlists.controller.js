@@ -12,16 +12,23 @@ const getAllPlaylists = async (req, res, next) => {
 };
 
 //CREATE PLAYLIST
-async function createPlaylist(req, res, next) {
+async function createPlaylist(req, res) {
   const { name, description, thumbnail } = req.body;
 
   try {
-    const playlist = await playlistModel.create({
+    const playlist = new playlistModel({
       name,
       description,
       thumbnail,
     });
-    res.status(200).send({ status: true, data: playlist });
+    playlist.save( (error,data) => {
+      if(error)
+      { 
+        throw error
+      }
+      res.status(200).send({ status: true, data: playlist });
+    })
+   
   } catch (error) {
     res.status(500).send({ status: false, msg: error.message });
   }

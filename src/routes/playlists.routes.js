@@ -7,7 +7,7 @@ playlistRouter
 //show all playlist
 .get('/',PlaylistsController.getAllPlaylists)
 //created a playlist 
-.post('/',PlaylistsController.createPlaylist)
+.post('/createplaylist',PlaylistsController.createPlaylist)
 
 
 
