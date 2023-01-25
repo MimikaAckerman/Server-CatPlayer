@@ -3,7 +3,7 @@ const PlaylistsController = require('../controllers/playlists.controller')
 
 playlistRouter
 .get('/',PlaylistsController.getAllPlaylists)
-.get('/:id',PlaylistsController.getPlaylistByID)
+.get('/:name',PlaylistsController.getPlaylistByID)
 .delete('/:id',PlaylistsController.deletePlaylist)
 .patch(':/id',PlaylistsController.createPlaylist)
 
