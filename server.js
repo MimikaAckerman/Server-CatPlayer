@@ -4,7 +4,7 @@ const morgan = require('morgan')
 const {json} = require('body-parser')
 
 
-const userRoutes = require('./src/routes/user.routes.js')
+
 const fileUpload = require('express-fileupload')
 const cors = require('cors')
 
@@ -32,7 +32,7 @@ app.use(json({limit:'50mb'}))
 
 
 app.use('/album' ,albumsRoutes)
-app.use('/user',userRoutes)
+
 app.use('/playlists',playlistsRoutes)
 app.use('/artists',artistsRoutes)
 app.use('/genres',genresRouter)

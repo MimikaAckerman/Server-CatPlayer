@@ -11,7 +11,7 @@ const PlaylistSchema = Schema(
     description: {
       type: String,
       required: false,
-    },
+    }, 
     thumbnail: {
       type: String,
       trim: true,

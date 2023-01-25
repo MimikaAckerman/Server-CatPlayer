@@ -19,11 +19,11 @@ async function createPlaylist(req, res) {
     const playlist = new playlistModel({
       name,
       description,
-      thumbnail,
+      thumbnail: "https://i.pinimg.com/564x/5c/99/29/5c992970bd1fe4d09d39435f34b49ae7.jpg"
     });
     playlist.save( (error,data) => {
       if(error)
-      { 
+      {  
         throw error
       }
       res.status(200).send({ status: true, data: playlist });

@@ -16,8 +16,10 @@ const getAllAlbums = async (req, res, next) => {
     }
   }
   
-  
-  const createAlbum = async (req, res, next) => {
+ /*  add album in profile
+  delete album in profile */
+
+const createAlbum = async (req, res, next) => {
     const { id } = req.params
     const { title, yearReleased, genre } = req.body
   
@@ -40,7 +42,8 @@ const getAllAlbums = async (req, res, next) => {
     } catch (error) {
       res.status(500).send({ status: false, msg: error.message })
     }
-  }
+  } 
+  
   const getAlbumByID = async (req, res, next) => {
     const { id } = req.params
     try {
@@ -51,7 +54,13 @@ const getAllAlbums = async (req, res, next) => {
       res.status(500).send({ status: false, msg: error.message })
     }
   }
-  const updateAlbum = async (req, res, next) => {
+
+
+
+//IS NECESARY IN PLAYLIST--------------------
+
+
+const updateAlbum = async (req, res, next) => {
     const { id } = req.params
     const { ...fields } = req.body
   
@@ -81,7 +90,9 @@ const getAllAlbums = async (req, res, next) => {
       res.status(500).send({ status: false, msg: error.message })
     }
   }
+ 
+
   
   module.exports = {
-    getAllAlbums, createAlbum, getAlbumByID, updateAlbum, deleteAlbum
+    getAllAlbums,updateAlbum,createAlbum,getAlbumByID,deleteAlbum,
   }
