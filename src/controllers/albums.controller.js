@@ -1,5 +1,6 @@
 const albumModel = require('../models/albums.model')
 
+//SHOW ALL ALBUMS--------------------------------------------
 const getAllAlbums = async (req, res, next) => {
     try {
 
