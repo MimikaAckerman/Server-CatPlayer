@@ -9,7 +9,7 @@ playlistRouter
 //created a playlist 
 .post('/createplaylist',PlaylistsController.createPlaylist)
 //delete playlist 
-.delete('/:id',PlaylistsController.deletePlaylist)
+.delete('/deleteplaylist/:id',PlaylistsController.deletePlaylist)
  
 
 
