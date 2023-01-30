@@ -25,6 +25,10 @@ const PlaylistSchema = Schema(
         },
       ],
       default: [],
+    },
+    emailUser:{
+      type:String,
+      required:true
     }
   },
  

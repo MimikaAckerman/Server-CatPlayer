@@ -13,13 +13,14 @@ const getAllPlaylists = async (req, res, next) => {
 
 //CREATE PLAYLIST
 async function createPlaylist(req, res) {
-  const { name, description, thumbnail } = req.body;
+  const { name, description, thumbnail ,emailUser} = req.body;
 
   try {
     const playlist = new playlistModel({
       name,
       description,
-      thumbnail: "https://i.pinimg.com/564x/5c/99/29/5c992970bd1fe4d09d39435f34b49ae7.jpg"
+      thumbnail: "https://i.pinimg.com/564x/5c/99/29/5c992970bd1fe4d09d39435f34b49ae7.jpg",
+      emailUser
     });
     playlist.save( (error,data) => {
       if(error)
@@ -35,6 +36,19 @@ async function createPlaylist(req, res) {
 }
 
 
+//DELETE PLAYLIST
+
+const deletePlaylist = async (req, res, next) => {
+  const {id} = req.params
+  try {
+    const playlist = await playlistModel.findByIdAndDelete({_id:id})
+    res.status(200).send({status:true,data:playlist._id})
+  } catch (error) {
+    res.status(500).send({status:false,msg:error.message})
+    
+  }
+
+};
 
 
 
@@ -51,7 +65,7 @@ async function createPlaylist(req, res) {
     res.status(500).send({ status: false, msg: error.message });
   } */
 
-const updatePlaylist = async (req, res, next) => {
+/* const updatePlaylist = async (req, res, next) => {
   const { id } = req.params;
   const { ...fields } = req.body;
 
@@ -73,21 +87,22 @@ const updatePlaylist = async (req, res, next) => {
   } catch (error) {
     res.status(500).send({ status: false, msg: error.message });
   }
-};
-const deletePlaylist = async (req, res, next) => {
-  const { id } = req.params;
-  try {
-    const playlist = await playlistModel.findByIdAndDelete({ _id: id });
-    res.status(200).send({ status: true, data: playlist._id });
-  } catch (error) {
-    res.status(500).send({ status: false, msg: error.message });
-  }
-};
+}; */
+
+
+
+
+
+
+
+
+
+
 module.exports = {
   getAllPlaylists,
   createPlaylist,
   /*   getPlaylistByName, */
 
-  updatePlaylist,
+  /* updatePlaylist, */
   deletePlaylist,
 };
