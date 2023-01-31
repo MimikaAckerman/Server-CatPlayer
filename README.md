@@ -1,45 +1,81 @@
 
-# Server-appmusic 
 
-# Description
-In this project we work with mongoDB https://www.mongodb.com/try/download/community. 
-all of team we receive the petition to the api.
-
-## Acknowledgements
-
- - [Introduction To mongodb](https://github.com/assembler-institute/mongodb-intro-workshop.git)
- - [mongodb Pill](https://github.com/assembler-institute/mongodb-pill.git)
- - [README-Template.md](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+# Hi!, this is BetaMusic! 🎶
 
 
-## Installation
+![Logo](https://i.pinimg.com/564x/7b/f0/96/7bf0966c14e09fba8792f94eba43a20d.jpg)
 
-Install my-project with npm
+
+We are a group of programmers who have developed a music application with the purpose of facilitating the use and acquisition of listening to different genres and singers to the user. 
+
+## Technical description 🤖
+
+This is the Frontend server of the main App which is BetaMusic.
+This server has the functionality to make the requests that the user wants to make from the visual part.
+That is to say, every action performed by the user is managed from here.
+
+
+
+the packages installed for the realization of the server are as follows:
+
+
+
+
+## Run Locally 🪜
+
+Clone the project
 
 ```bash
-  npm install my-project
-  cd my-project
+  git clone https://link-to-project
 ```
-    
-## Tech Stack
 
-**Client:** React, Moongose, TailwindCSS, Auth0
+Go to the project directory
 
-**Server:** Node, Express
+```bash
+  cd my-app
+```
 
-## Screenshots
+Install dependencies
 
-<img width="960" alt="Captura de pantalla_20230123_160752" src="https://user-images.githubusercontent.com/110461673/214084944-47a5ea83-0<img width="960" alt="Captura de pantalla_20230123_160725" src="https://user-images.githubusercontent.com/110461673/214084997-2c76f40b-54f1-4c59-9115-d08d5afe8cee.png">
-baf-4649-8a66-b0a596262650.png">
+```bash
+  npm install
+```
 
-## Authors
+Start the server
 
-- [@MimikaAckerman](https://github.com/MimikaAckerman)
+```bash
+  npm start
+```
 
-- [@Jacksonz1999](https://github.com/Jacksonz1999)
 
-- [@bernatpineda](https://github.com/bernatpineda)
+## Packages installed 📦
+#### For installation 🪛
 
-- [@ThalitaRoque](https://github.com/ThalitaRoque)
+```http
+ npm i (namePackend)
+```
 
-- [@ZiwenWang544](https://github.com/ZiwenWang544)
+
+ - [auth0](https://www.npmjs.com/package/@auth0/auth0-react)
+ - [Bycript](https://www.npmjs.com/package/bcrypt)
+- [cloudinary](https://www.npmjs.com/package/cloudinary)
+- [cors](https://www.npmjs.com/package/cors)
+- [dotenv](https://www.npmjs.com/package/dotenv)
+- [express](https://www.npmjs.com/package/express)
+- [express-fileupload](https://www.npmjs.com/package/express-fileupload)
+- [fs-extra](https://www.npmjs.com/package/fs-extra)
+- [helmet](https://www.npmjs.com/package/helmet)
+- [loglevel](https://www.npmjs.com/package/loglevel)
+- [mongoose](https://www.npmjs.com/package/mongoose)
+- [morgan](https://www.npmjs.com/package/morgan)
+- [validator](https://www.npmjs.com/package/validator)
+## API Reference
+
+#### Get all items
+
+
+
+
+
+
+
