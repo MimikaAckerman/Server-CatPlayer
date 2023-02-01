@@ -1,5 +1,4 @@
-const { response } = require("express");
-const SearchModel = require("../models/search.model.js");
+const tracksMode = require("../models/tracks.model");
 
 const getSearch = async (req, res) => {
   try {
@@ -8,34 +7,29 @@ const getSearch = async (req, res) => {
     const agg = [
       {
         $search: {
+          index: "tester",
           autocomplete: {
             query: name,
             path: "name",
-            fuzzy: {
-              maxEdits: 2,
-            },
           },
         },
-      },
-      {
-        $limit: 5,
       },
       {
         $project: {
           _id: 0,
           name: 1,
           thumbnail: 1,
-          description: 1,
+          artist: 1,
         },
       },
     ];
-    console.log(agg);
-    const response = await SearchModel.aggregate(agg);
-    console.log(response);
-    return res.json(response);
+    const search = await tracksMode.aggregate(agg);
+    res.status(200).json({
+      ok: true,
+      data: search,
+    });
   } catch (error) {
-    console.log(error);
-    return res.json([]);
+    res.status(500).json(error);
   }
 };
 module.exports = { getSearch };
