@@ -3,7 +3,7 @@ const { Schema } = require("mongoose");
 
 const TrackSchema = Schema(
   {
-    title: {
+    name: {
       type: String,
       required: [true, "Track title required"],
       trim: true,
@@ -17,26 +17,7 @@ const TrackSchema = Schema(
       trim: true,
       required: false,
     },
-    duration: {
-      type: Number,
-      required: false,
-    },
-    rating: {
-      type: Number,
-      required: false,
-    },
-    color: {
-      type: String,
-      trim: true,
-    },
-    genre: {
-      type: Schema.Types.ObjectId,
-      ref: "genre",
-    },
-    authorId: {
-      type: Schema.Types.ObjectId,
-      ref: "user",
-    },
+   
     artistId: {
       type: [
         {
@@ -49,7 +30,8 @@ const TrackSchema = Schema(
     playlists: {
       type: [
         {
-          type: Schema.Types.ObjectId,
+          type:String,
+          /* type: Schema.Types.ObjectId, */
           ref: "playlist",
         },
       ],

@@ -1,3 +1,4 @@
+const { default: mongoose } = require("mongoose");
 const { findByIdAndUpdate } = require("../models/tracks.model");
 const tracksModel = require("../models/tracks.model");
 
@@ -11,61 +12,24 @@ const getAllTracks = async (req, res, next) => {
   }
 };
 
+//actualizar todos los tracks
+const updateTracks = async (req, res, next) => {
+  const { id } = req.params;
+  console.log(id);
 
+  const params = req.body;
+  console.log(params);
 
- const updateTracks = async (req, res, next) => {
-
- /*  let trackId = req.params.trackId
-  let update = req.body
-
-  
-  Tracks.findByIdAndUpdate(trackId,update,(err,trackUpdate) => {
-    if(err) res.status(500).send({message:`error de actualizar track: ${err}`})
-    res.status(200).send({updateTracks:trackUpdate})
-  })
-
- */
-
-
-
-
- const { id } = req.params;
-  const { ...fields } = req.body;
-
+  /* const { name,playlists } = req.body  */
   try {
-    const author = await tracksModel
-      .findOneAndUpdate(
-        { _id: id },
-        {
-          $set: {
-            ...fields,
-          },
-        },
-        { new: true }
-      )
-      .lean()
-      .exec();
-
-    res.status(200).send({ status: true, data: author });
+    const editTrack = await tracksModel.findByIdAndUpdate(id, params, {
+      new: true,
+    });
+    res.status(200).send({ status: true, data: editTrack });
   } catch (error) {
     res.status(500).send({ status: false, msg: error.message });
-  } 
+  }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //CREATE TRACKS
 /* async function createTracks(req, res) {
@@ -89,9 +53,6 @@ const getAllTracks = async (req, res, next) => {
   }
 } */
 
-
-
-
 /* const deleteTracks = async (req, res, next) => {
   const { id } = req.params;
   try {
@@ -99,15 +60,10 @@ const getAllTracks = async (req, res, next) => {
     res.status(200).send({ status: true, data: tracks._id });
   } catch (error) {
     res.status(500).send({ status: false, msg: error.message });
-  }
-};
-
- */
-
+  }*/
 
 module.exports = {
   getAllTracks,
- /*  createTracks, */
   updateTracks,
-/*   deleteTracks, */
+  /*   deleteTracks, */
 };

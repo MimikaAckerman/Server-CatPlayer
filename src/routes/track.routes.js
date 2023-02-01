@@ -5,7 +5,7 @@ trackRouter
   //mostrar todas las canciones
   .get("/", tracksController.getAllTracks)
   //insertar una cancion a una playlist en especifico para ello usamos el metodo put
-  .put("/tracksUpdate/:tracksId",tracksController.updateTracks)
+  .patch("/updateTracks/:id",tracksController.updateTracks)
 
 
 
@@ -14,4 +14,5 @@ trackRouter
 /*   .post("/createtrack", tracksController.createTracks); */
 /*  .delete(":/id", tracksController, deleteTrack);
  */
+
 module.exports = trackRouter;
