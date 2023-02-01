@@ -11,6 +11,7 @@ const playlistsRoutes = require("./src/routes/playlists.routes.js");
 const artistsRoutes = require("./src/routes/artists.routes.js");
 const genresRouter = require("./src/routes/genres.routes.js");
 const trackRouter = require("./src/routes/track.routes.js");
+const searchRouter = require("./src/routes/search.routes.js");
 const app = express();
 
 app.use(cors());
@@ -33,5 +34,5 @@ app.use("/playlists", playlistsRoutes);
 app.use("/artists", artistsRoutes);
 app.use("/genres", genresRouter);
 app.use("/tracks", trackRouter);
-
+app.use("/search", searchRouter);
 module.exports = app;

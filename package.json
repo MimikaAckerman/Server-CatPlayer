@@ -38,6 +38,7 @@
     "init": "^0.1.2",
     "loglevel": "^1.8.1",
     "mongoose": "^6.8.3",
+    "mongosh": "^1.6.2",
     "morgan": "^1.10.0",
     "node-fetch-commonjs": "^3.2.4",
     "validator": "^13.7.0"
