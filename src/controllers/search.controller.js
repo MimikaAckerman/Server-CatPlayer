@@ -4,6 +4,7 @@ const SearchModel = require("../models/search.model.js");
 const getSearch = async (req, res) => {
   try {
     const { name } = req.query;
+
     const agg = [
       {
         $search: {
@@ -28,9 +29,10 @@ const getSearch = async (req, res) => {
         },
       },
     ];
+    console.log(agg);
     const response = await SearchModel.aggregate(agg);
+    console.log(response);
     return res.json(response);
-    //!ERROR
   } catch (error) {
     console.log(error);
     return res.json([]);
