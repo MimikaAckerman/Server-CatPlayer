@@ -22,9 +22,11 @@ const updateTracks = async (req, res, next) => {
 
   /* const { name,playlists } = req.body  */
   try {
-    const editTrack = await tracksModel.findByIdAndUpdate(id, params, {
-      new: true,
-    });
+
+    /* const tracks = await tracksModel.findByIdAndDelete({ _id: id }); */
+
+
+    const editTrack = await tracksModel.findByIdAndUpdate(id, params, {new: true,});
     res.status(200).send({ status: true, data: editTrack });
   } catch (error) {
     res.status(500).send({ status: false, msg: error.message });
