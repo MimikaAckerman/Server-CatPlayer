@@ -15,12 +15,6 @@ This server has the functionality to make the requests that the user wants to ma
 That is to say, every action performed by the user is managed from here.
 
 
-
-the packages installed for the realization of the server are as follows:
-
-
-
-
 ## Run Locally 🪜
 
 Clone the project
@@ -49,6 +43,7 @@ Start the server
 
 
 ## Packages installed 📦
+the packages installed for the realization of the server are as follows:
 #### For installation 🪛
 
 ```http
@@ -69,12 +64,60 @@ Start the server
 - [mongoose](https://www.npmjs.com/package/mongoose)
 - [morgan](https://www.npmjs.com/package/morgan)
 - [validator](https://www.npmjs.com/package/validator)
+
+
+
 ## API Reference
 
 #### Get all items
 
+```http
+  GET /api/items
+```
+to display all data for each data:
 
-## Authors 
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+```http
+  POST /api/items
+```
+#### Create an element
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+```http
+  DELETE /api/items
+```
+### Delete element
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+```http
+  DELETE /api/items
+```
+### Update element
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
+
+
+## Used By and purpose of the project 🫶🤲
+
+Any programmer can make use of this project that is under development.
+
+Our purpose is to continue developing this musical application prototype so that in the future it will be a user-friendly application.
+
+
+
+## Authors 🤖
 - [@MimikaAckerman](https://github.com/MimikaAckerman) 
 - [@Jacksonz1999](https://github.com/Jacksonz1999)  
 - [@bernatpineda](https://github.com/bernatpineda)  
@@ -82,6 +125,5 @@ Start the server
 - [@ZiwenWang544](https://github.com/ZiwenWang544)
 
 
-<img align="center" alt="Coding" width="400" src="https://i.pinimg.com/originals/17/28/5f/17285fc448d970cdd53b1b3ba11d7e66.gif">
 
 
