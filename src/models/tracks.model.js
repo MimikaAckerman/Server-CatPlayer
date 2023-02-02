@@ -30,8 +30,8 @@ const TrackSchema = Schema(
     playlists: {
       type: [
         {
-          type:String,
-          /* type: Schema.Types.ObjectId, */
+          /* type:String, */
+          type: Schema.Types.ObjectId, 
           ref: "playlist",
         },
       ],
